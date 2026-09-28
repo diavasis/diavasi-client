@@ -1,8 +1,13 @@
 # Rust client
 
+[![CI](https://github.com/diavasis/diavasi-client/actions/workflows/ci.yml/badge.svg)](https://github.com/diavasis/diavasi-client/actions/workflows/ci.yml)
+[![crates.io](https://img.shields.io/crates/v/diavasi-client.svg)](https://crates.io/crates/diavasi-client)
+[![docs.rs](https://docs.rs/diavasi-client/badge.svg)](https://docs.rs/diavasi-client)
+[![license](https://img.shields.io/github/license/diavasis/diavasi-client)](https://github.com/diavasis/diavasi-client/blob/main/LICENSE)
+
 `diavasi-client` is a thin client of `diavasi.data.v1`. `run` opens a TLS stream, sends the bearer token, Hello version 1, then JoinGroup, and acks each batch. The crate stores no cursor and does not dedupe on `record_id`. A dropped stream is how unacked batches return. Reconnect with the same consumer id and the server replays them.
 
-`proto/data.proto` in this repository is the copy of `diavasi.data.v1` from [github.com/diavasis/diavasi](https://github.com/diavasis/diavasi) tag `v0.12.0`. The crates.io crate `diavasi-client` is version 0.1.0. It is not a dependency of the server.
+`proto/data.proto` in this repository is the copy of `diavasi.data.v1` from [github.com/diavasis/diavasi](https://github.com/diavasis/diavasi) tag `v0.13.0`. The crates.io crate `diavasi-client` is version 0.1.0. It is not a dependency of the server.
 
 ## Install
 
